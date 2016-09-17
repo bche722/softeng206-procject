@@ -10,8 +10,8 @@ public class Test {
 			System.out.println(word);
 		}
 		
-		Method.writeWord(3, "hhhh", Type.Failed);
-		Method.writeWord(5, "heheheh", Type.Failed);
-		Method.clear();
+		Method.writeWord(3, "hhhh", WordType.Mastered);
+		Method.writeWord(5, "heheheh", WordType.Mastered);
+		Method.speakWord("how are you", VoiceType.Voice2);
 	}
 }

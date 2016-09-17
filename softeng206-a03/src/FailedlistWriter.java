@@ -15,8 +15,8 @@ public class FailedlistWriter {
 	private ArrayList<Integer> levellines;
 
 	public FailedlistWriter() {
-		path = "src/failedlist.txt";
-		resetpath = "src/newlist.txt";
+		path = "src/.failedlist";
+		resetpath = "src/.newlist";
 		sourceFile = new File(path);
 		setup();
 	}

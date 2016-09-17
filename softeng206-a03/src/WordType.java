@@ -1,3 +1,3 @@
-public enum Type {
+public enum WordType {
 	Mastered, Faulted, Failed
 }

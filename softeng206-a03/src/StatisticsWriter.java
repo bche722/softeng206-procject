@@ -15,8 +15,8 @@ public class StatisticsWriter {
 	private ArrayList<Integer> levellines;
 
 	public StatisticsWriter() {
-		path = "src/statisticslist.txt";
-		resetpath = "src/newlist.txt";
+		path = "src/.statisticslist";
+		resetpath = "src/.newlist";
 		sourceFile = new File(path);
 		setup();
 	}
@@ -41,7 +41,7 @@ public class StatisticsWriter {
 		}
 	}
 
-	public void writeWord(int level, String word, Type type) {
+	public void writeWord(int level, String word, WordType type) {
 		if (!contains(word)) {
 			try {
 				BufferedReader in = new BufferedReader(new FileReader(path));
@@ -56,11 +56,11 @@ public class StatisticsWriter {
 					} else {
 						out.write(string);
 						out.newLine();
-						if (type.equals(Type.Mastered)) {
+						if (type.equals(WordType.Mastered)) {
 							out.write(word + " Mastered 1 Faulted 0 Failed 0");
-						} else if (type.equals(Type.Faulted)) {
+						} else if (type.equals(WordType.Faulted)) {
 							out.write(word + " Mastered 0 Faulted 1 Failed 0");
-						} else if (type.equals(Type.Failed)) {
+						} else if (type.equals(WordType.Failed)) {
 							out.write(word + " Mastered 0 Faulted 0 Failed 1");
 						}
 						out.newLine();
@@ -89,13 +89,13 @@ public class StatisticsWriter {
 						out.write(string);
 						out.newLine();
 					} else {
-						if (type.equals(Type.Mastered)) {
+						if (type.equals(WordType.Mastered)) {
 							out.write(word + " Mastered " + (Integer.parseInt(string.split(" ")[2]) + 1) + " Faulted "
 									+ string.split(" ")[4] + " Failed " + string.split(" ")[6]);
-						} else if (type.equals(Type.Faulted)) {
+						} else if (type.equals(WordType.Faulted)) {
 							out.write(word + " Mastered " + string.split(" ")[2] + " Faulted "
 									+ (Integer.parseInt(string.split(" ")[4]) + 1) + " Failed " + string.split(" ")[6]);
-						} else if (type.equals(Type.Failed)) {
+						} else if (type.equals(WordType.Failed)) {
 							out.write(word + " Mastered " + string.split(" ")[2] + " Faulted " + string.split(" ")[4]
 									+ " Failed " + (Integer.parseInt(string.split(" ")[6]) + 1));
 						}
