@@ -1,12 +1,16 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Method {
 	private static FailedlistWriter w1 = new FailedlistWriter();
 	private static StatisticsWriter w2 = new StatisticsWriter();
+	private static Reader readers =new Reader("src/.statisticslist");
+	private static Reader readern =new Reader("src/NZCER-spelling-lists.txt");
+	private static Reader readerr =new Reader("src/.failedlist");
 
-	public static void clear() {
+ 	public static void clear() {
 		w1.resetFaultedlist();
 		w2.resetStatisticslist();
 	}
@@ -38,5 +42,19 @@ public class Method {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static ArrayList<String> getStatisticsList(int level){
+		readers.setup();
+		return readers.AllWordList(level);
+	}
+	
+	public static ArrayList<String> getNewGameList(int level){
+		return readern.RandomWordList(level);
+	}
+	
+	public static ArrayList<String> getReviewList(int level){
+		readers.setup();
+		return readerr.RandomWordList(level);
 	}
 }

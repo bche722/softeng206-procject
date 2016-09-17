@@ -33,7 +33,7 @@ public class Reader {
 		}
 	}
 
-	public String ReadLine(int line) {
+	private String ReadLine(int line) {
 		int n = 0;
 		String s = null;
 		try {
@@ -65,8 +65,28 @@ public class Reader {
 			for (int i = line1; i <= line2; i++) {
 				list.add(ReadLine(i));
 			}
+			Collections.shuffle(list);
 		}
-		Collections.shuffle(list);
+		return list;
+	}
+	
+	public ArrayList<String> AllWordList(int level) {
+		ArrayList<String> list = new ArrayList<String>();
+		int n = 0;
+		String s = null;
+		try {
+			Scanner scanner = new Scanner(sourceFile);
+			while (scanner.hasNextLine()) {
+				n++;
+				s = scanner.nextLine();
+				if (n >= levellines.get(level-1)+1 && n < levellines.get(level)) {
+					list.add(s);
+				} 
+			}
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}	
 		return list;
 	}
 }

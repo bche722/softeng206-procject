@@ -3,15 +3,19 @@ import java.util.ArrayList;
 public class Test {
 
 	public static void main(String[] args) {
-		Reader reader=new Reader("src/NZCER-spelling-lists.txt");
-		ArrayList<String> list = reader.RandomWordList(1);
+		ArrayList<String> list = Method.getNewGameList(1);
  
 		for(String word:list){
 			System.out.println(word);
 		}
 		
-		Method.writeWord(3, "hhhh", WordType.Mastered);
-		Method.writeWord(5, "heheheh", WordType.Mastered);
-		Method.speakWord("how are you", VoiceType.Voice2);
+		Method.clear();
+		Method.writeWord(5, "hhhh", WordType.Failed);
+		Method.writeWord(5, "heheheh", WordType.Failed);
+		
+		list=Method.getReviewList(5);
+		for(String word:list){
+			System.out.println(word);
+		}
 	}
 }
