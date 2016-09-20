@@ -61,7 +61,10 @@ public class Reader {
 				int line = (int) (line1 + Math.random() * (line2 - line1 + 1));
 				list.add(ReadLine(line));
 			}
-		} else {
+		}else if(line1==line2+1){
+			return list;
+		} 
+		else {
 			for (int i = line1; i <= line2; i++) {
 				list.add(ReadLine(i));
 			}
