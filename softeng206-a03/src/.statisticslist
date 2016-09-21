@@ -1,8 +1,14 @@
 %Level 1
-and Mastered 0 Faulted 0 Failed 1
-we Mastered 0 Faulted 0 Failed 1
-the Mastered 0 Faulted 0 Failed 1
-in Mastered 0 Faulted 0 Failed 1
+to Mastered 4 Faulted 0 Failed 0
+I Mastered 4 Faulted 0 Failed 0
+it Mastered 4 Faulted 0 Failed 0
+a Mastered 4 Faulted 0 Failed 0
+in Mastered 3 Faulted 1 Failed 0
+the Mastered 4 Faulted 0 Failed 1
+my Mastered 4 Faulted 0 Failed 1
+was Mastered 4 Faulted 0 Failed 1
+we Mastered 5 Faulted 0 Failed 2
+and Mastered 3 Faulted 3 Failed 0
 %Level 2
 %Level 3
 %Level 4

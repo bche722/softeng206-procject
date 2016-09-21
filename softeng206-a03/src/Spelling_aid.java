@@ -9,6 +9,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import gui.VideoPlayer;
+import method.Method;
+import method.VoiceType;
+import method.WordType;
+
 @SuppressWarnings("serial")
 public class Spelling_aid extends JFrame {
 	private ArrayList<String> output;
@@ -125,6 +130,7 @@ public class Spelling_aid extends JFrame {
 						confirmwork=false;
 					}
 			}
+				
 		}
 	});
 }

@@ -1,3 +1,4 @@
+package method;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -78,7 +79,7 @@ public class Method {
 				out.close();
 				ProcessBuilder pb = new ProcessBuilder("bash", "-c", "festival -b src/.speakout.scm");
 				pb.start();
-				Thread.sleep(1500);
+				Thread.sleep(2000);
 			} catch (IOException | InterruptedException e) {
 				e.printStackTrace();
 			}
