@@ -28,8 +28,8 @@ public class Method {
 		w2.writeWord(level, word, type);
 	}
 
-	public static void speakWord(String line,VoiceType type){
-		worker=new Method.SpeakWorker(type,line,worker);
+	public static void speakWord(String line,VoiceType type,int delay){
+		worker=new Method.SpeakWorker(type,line,worker,delay);
 		worker.execute();
 	}
 
@@ -51,11 +51,12 @@ public class Method {
 		private VoiceType type;
 		private String line;
 		private SpeakWorker lastworker;
-		
-		public SpeakWorker(VoiceType type,String line,SpeakWorker lastworker){
+		private int delay;
+		public SpeakWorker(VoiceType type,String line,SpeakWorker lastworker,int delay){
 			this.type=type;
 			this.line=line;
 			this.lastworker=lastworker;
+			this.delay=delay;
 		}
 		
 		@Override
@@ -79,7 +80,7 @@ public class Method {
 				out.close();
 				ProcessBuilder pb = new ProcessBuilder("bash", "-c", "festival -b src/.speakout.scm");
 				pb.start();
-				Thread.sleep(2000);
+				Thread.sleep(delay);
 			} catch (IOException | InterruptedException e) {
 				e.printStackTrace();
 			}

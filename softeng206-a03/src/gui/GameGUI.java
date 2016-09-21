@@ -42,7 +42,7 @@ public class GameGUI extends JFrame {
 		reviewMistakesButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Review(Method.getReviewList(level.getSelectedIndex()+1));
+				new Review(level.getSelectedIndex()+1,Method.getReviewList(level.getSelectedIndex()+1));
 			}
 		});
 		this.pane.add(reviewMistakesButton);
@@ -60,7 +60,7 @@ public class GameGUI extends JFrame {
 		clearStatisticsButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Clear();
+				Method.clear();
 			}
 		});
 		this.pane.add(clearStatisticsButton);
